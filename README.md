@@ -1,4 +1,5 @@
 # SambaConfig
-A really simple bash file to configure a basic samba server
+A really simple Bash script to configure a basic Samba server.
 
-Make sure of set propoerly permissions to file **install_samba.sh** with chmod +x install_samba.sh
+Make sure to set the correct permissions for the install_samba.sh file using:
+chmod +x install_samba.sh
