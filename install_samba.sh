@@ -27,7 +27,7 @@ samba_config() {
     if ! usermod -aG sambashare share; then
         echo -e "\e[31mError: Falló al unir el usuario al grupo sambashare.\e[0m" | tee -a "$LOG_FILE"
         return 1
-
+    fi
     if ! smbpasswd -a share; then
         echo -e "\e[31mError: Falló la asignación de la contraseña para el usuario SAMBA.\e[0m" | tee -a "$LOG_FILE"
         return 1
