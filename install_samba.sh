@@ -16,7 +16,6 @@ install_samba() {
     fi
 }
 
-# Configuración de Samba (agregamos un usuario y configuramos el archivo smb.conf)
 samba_config() {
     echo -e "\e[33m>>> Crear usuario para samba... <<<\e[0m" | tee -a "$LOG_FILE"
     if ! adduser share; then
@@ -34,7 +33,6 @@ samba_config() {
     fi
 
 
-    # Configuramos el archivo /etc/samba/smb.conf para compartir la carpeta
     echo -e "\e[33m>>> Configurando archivo /etc/samba/smb.conf... <<<\e[0m" | tee -a "$LOG_FILE"
     cat <<EOL > /etc/samba/smb.conf
 
@@ -76,7 +74,6 @@ create_folder() {
     fi
 }
 
-# Asignar permisos a la carpeta compartida
 asign_permissions() {
     echo -e "\e[33m>>> Asignando permisos a la carpeta... <<<\e[0m" | tee -a "$LOG_FILE"
     if ! chmod -R 755 /share/folder; then
